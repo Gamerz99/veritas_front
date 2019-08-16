@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "bemics",
+    "test": "veritas-809c8"
+  }
+}
