@@ -2150,6 +2150,10 @@
 }
 
 @media (max-width:768px){
+    .blog_grid_info{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
     .sec_title br,.prototype_service_info h2 br,.hosting_title h2 br{
         display: none;
     }
@@ -2236,7 +2240,7 @@
         padding: 50px 20px;
     }
     .sec_pad,.prototype_service_info{
-        padding: 70px 0px;
+        padding: 0px 0px;
     }
     .sec_title.mb_70{
         margin-bottom: 50px

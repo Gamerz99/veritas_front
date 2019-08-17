@@ -11,10 +11,12 @@ export class HomeComponent implements OnInit {
   news: any = null;
   result: any = null;
   loading: boolean = false;
+  alert: boolean = false;
   constructor(private api: ApiService) { }
 
   ngOnInit() {
     this.getsourcepool();
+    console.log(Date())
   }
 
   getsourcepool() {
@@ -29,20 +31,36 @@ export class HomeComponent implements OnInit {
   }
 
   verify() {
-    this.loading = true;
-    let content = {
-      data: this.news
-    }
-    this.api.check(content).subscribe(
-      res => {
-        this.result = res.data;
-        this.loading = false;
-      },
-      err => {
-        console.log(err);
+    if (this.news) {
+      this.alert = false;
+      this.result = null;
+      this.loading = true;
+      let content = {
+        data: this.news
       }
-    );
+      this.api.check(content).subscribe(
+        res => {
+          this.result = res.data;
+          this.loading = false;
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    } else {
+      this.alert = true;
+    }
 
+  }
+
+  clear() {
+    this.alert = false;
+    this.news = null;
+    this.result = null;
+  }
+
+  dismiss() {
+    this.alert = false;
   }
 
 }

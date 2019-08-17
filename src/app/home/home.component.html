@@ -73,13 +73,22 @@
         </div>
       </div>
       <div class="col-lg-8 blog_grid_info">
+        <div class="alert error" *ngIf="alert">
+          <div class="alert_body">
+            <i class="icon-close"></i>
+            Error Message! Please enter news
+          </div>
+          <div class="alert_close" (click)="dismiss()"><i class="icon_close"></i></div>
+        </div>
+
         <form class="get_quote_form row" action="#" method="post">
           <div class="col-md-12 form-group">
             <textarea class="form-control message" name="news" [(ngModel)]="news" placeholder="News Content"></textarea>
           </div>
-          <div class="col-md-12 center"><button class="btn btn_three btn_hover f_size_15 f_500" (click)="verify()"
-              type="button">Check
+          <div class="col-md-12 center">
+            <button class="btn btn_three btn_hover f_size_15 f_500" (click)="verify()" type="button">Check
               News</button>
+            <button class="btn btn_three btn_hover f_size_15 f_500" (click)="clear()" type="button">Clear</button>
           </div>
         </form>
 
@@ -97,9 +106,12 @@
                 </div>
                 <div class=" media-body">
                   <h5 class="f_p t_color3 f_size_18 f_500">{{related.name}}</h5>
-                  <h6 class="f_p f_size_15 f_400 mb_20">{{related.date}}</h6>
+                  <h6 class="f_p f_size_15 f_400 mb_20">{{related.date | timeAgo}}
+                  </h6>
                   <p>{{related.text}}</p>
+                  <p> <i class="verified fa fa-thumbs-up"></i> {{related.likes}} likes</p>
                 </div>
+
               </div>
             </li>
           </ul>
@@ -122,25 +134,25 @@
         <div class="icon s_icon_one"><i class="ti-check"></i></div>
         <h4 class="f_600 f_size_20 l_height28 t_color2 mb_20">Mail Metrics<br> Receive</h4>
         <p>Brolly off his nut A bit of how's your father chancer in my flat chinwag bog skive.</p>
-        <img class="float-right" src="img/home2/undraw.png" alt="">
+        <img class="float-right" src="../../assets/images/undraw.png" alt="">
       </div>
       <div class="service_item">
         <div class="icon s_icon_two"><i class="ti-location-arrow"></i></div>
         <h4 class="f_600 f_size_20 l_height28 t_color2 mb_20">Mail Metrics<br> Receive</h4>
         <p>Brolly off his nut A bit of how's your father chancer in my flat chinwag bog skive.</p>
-        <img class="float-right" src="img/home2/inbox.png" alt="">
+        <img class="float-right" src="../../assets/images/inbox.png" alt="">
       </div>
       <div class="service_item">
         <div class="icon s_icon_three"><i class="ti-search"></i></div>
         <h4 class="f_600 f_size_20 l_height28 t_color2 mb_20">Mail Metrics<br> Receive</h4>
         <p>Brolly off his nut A bit of how's your father chancer in my flat chinwag bog skive.</p>
-        <img class="float-right" src="img/home2/file.png" alt="">
+        <img class="float-right" src="../../assets/images/file.png" alt="">
       </div>
       <div class="service_item">
         <div class="icon s_icon_four"><i class="ti-stats-up"></i></div>
         <h4 class="f_600 f_size_20 l_height28 t_color2 mb_20">Mail Metrics<br> Receive</h4>
         <p>Brolly off his nut A bit of how's your father chancer in my flat chinwag bog skive.</p>
-        <img class="float-right" src="img/home2/report.png" alt="">
+        <img class="float-right" src="../../assets/images/report.png" alt="">
       </div>
     </div>
   </div>
