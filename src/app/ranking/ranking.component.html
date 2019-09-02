@@ -1,9 +1,7 @@
 <header class="header_area header_area_three">
   <nav class="navbar navbar-expand-lg menu_one menu_four">
     <div class="container">
-      <a class="navbar-brand" href="/home">
-        <h2 class="main_name">VERITAS</h2>
-      </a>
+      <a class="navbar-brand" href="/home"><img src="../assets/images/logo.png" alt="" width="12%" height="12%"></a>
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -47,3 +45,48 @@
     </div>
   </nav>
 </header>
+
+<section class="job_listing_area bg_color sec_pad3">
+  <div class="container">
+
+    <div class="job_listing">
+      <h3 class="f_p f_size_24 l_height28 f_500 t_color3 mb-30">Rated news domain</h3>
+      <div id="job_filter" class="job_list_tab">
+        <div data-filter="*" class="list_item_tab active">All</div>
+      </div>
+      <div class="center loading1" *ngIf="!ranklist">
+        <div class="spinner"></div>
+        <p class="text-center">Loading</p>
+      </div>
+      <div class="listing_tab" id="tab_filter" *ngIf="ranklist">
+        <div class="item lon new" *ngFor="let item of ranklist">
+          <div class="list_item">
+            <figure><a href="#"><img src="../../assets/images/ranking.png" alt=""></a></figure>
+            <div class="joblisting_text">
+              <div class="job_list_table">
+                <div class="jobsearch-table-cell">
+                  <h4><a href="#" class="f_500 t_color3">{{item.url}}</a></h4>
+                  <ul class="list-unstyled">
+                    <li class="g_color">News Domain</li>
+                    <li>Veritas</li>
+                    <li>updated {{item.updated | timeAgo}}</li>
+                  </ul>
+                </div>
+                <div class="jobsearch-table-cell">
+                  <div class="jobsearch-job-userlist">
+                    <h2 class="rating_color"><span class="score">Score</span> {{item.rating | number : '1.2-2'}}</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="navigation pagination text-center mt_60" role="navigation">
+        <div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+          <a class="page-numbers" href="#">2</a>
+          <a class="next page-numbers" href="#"><i class="ti-arrow-right"></i></a></div>
+      </nav>
+    </div>
+  </div>
+</section>

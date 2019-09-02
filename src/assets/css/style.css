@@ -408,11 +408,19 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 .sec_pad2{
   padding: 50px 0px;
 }
-
+.sec_pad3 {
+  padding: 5px 0px 50px;
+}
 .loading1{
   padding-top: 100px;
 }
+.rating_color{
+  color: #0D0C91
+}
 
+.score{
+  font-size: 15px;
+}
 /*====================================================*/
 /*====================================================*/
 .btn_hover {

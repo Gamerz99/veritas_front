@@ -14,6 +14,10 @@ export class ApiService {
     return this.http.get<any>(this.base_url + '/source_pool');
   }
 
+  getrankinglist() {
+    return this.http.get<any>(this.base_url + '/ranking_list');
+  }
+
   check(data) {
     return this.http.post<any>(this.base_url + '/check', data);
   }
