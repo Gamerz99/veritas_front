@@ -1,20 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
+import { Component, OnInit } from "@angular/core";
+import { ApiService } from "../api.service";
 
 @Component({
-  selector: 'app-ranking',
-  templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.css']
+  selector: "app-ranking",
+  templateUrl: "./ranking.component.html",
+  styleUrls: ["./ranking.component.css"]
 })
 export class RankingComponent implements OnInit {
   ranklist: any = null;
   loading: boolean = false;
   alert: boolean = false;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {}
 
   ngOnInit() {
-    this.getrankinglist()
+    this.getrankinglist();
   }
 
   getrankinglist() {

@@ -8,14 +8,18 @@ import { ApiService } from '../api.service';
 })
 export class HomeComponent implements OnInit {
   sourcepool: any = null;
+  feedback: any = null;
   news: any = null;
   result: any = null;
   loading: boolean = false;
   alert: boolean = false;
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {
+
+  }
 
   ngOnInit() {
     this.getsourcepool();
+    this.getfeedback()
     console.log(Date())
   }
 
@@ -23,6 +27,18 @@ export class HomeComponent implements OnInit {
     this.api.getsourcepool().subscribe(
       res => {
         this.sourcepool = res.response;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  getfeedback() {
+    this.api.getfeedback().subscribe(
+      res => {
+        this.feedback = res.response;
+        console.log(this.feedback)
       },
       err => {
         console.log(err);
